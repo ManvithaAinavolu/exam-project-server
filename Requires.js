@@ -1,0 +1,11 @@
+const express = require('express');
+const bodyparser = require('body-parser');
+const cors = require('cors');
+const login2 = require('./Routes/login2');
+const app = express();
+app.use(cors());
+app.use(bodyparser.urlencoded({ extended :  true}));
+app.use(bodyparser.json());
+app.use('/login2',login2);
+//app.use('/', login2);
+module.exports=app;
